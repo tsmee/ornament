@@ -15,7 +15,7 @@ def setup(request):
 
 @pytest.mark.usefixtures("setup")
 class TestText:
-    def test_text_fullscreen(self):
+    def test_text_fullscreen(self):     #проверим сначала, что на полном экране текст есть
         visible_text = self.driver.find_element_by_xpath("//*[contains(text(), 'A modern mobile app for keeping track "
                                                     "of lab test results and analyze their dynamics')]").text
         assert visible_text == 'A modern mobile app for keeping track of lab test results and analyze their dynamics'
@@ -24,6 +24,6 @@ class TestText:
         self.driver.set_window_size(767, 800)
         visible_text = self.driver.find_element_by_xpath("//*[contains(text(), 'A modern mobile app for keeping track "
                                                          "of lab test results and analyze their dynamics')]").text
-        assert visible_text == ""
+        assert visible_text == ""           #элемент на странице есть, но он невидим, т.е. текста нет
         print('text is not visible')
         self.driver.save_screenshot("screenshots/test_text.png")
