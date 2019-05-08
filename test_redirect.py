@@ -8,7 +8,7 @@ def setup(request):
     options.add_argument('lang=en')
     driver = webdriver.Chrome(options=options)
     request.cls.driver = driver
-    driver.get("https://ornament.health")
+    driver.get("http://ornament.health")
     driver.maximize_window()
     yield driver
     driver.close()
