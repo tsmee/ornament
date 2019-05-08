@@ -15,7 +15,7 @@ def setup(request):
     driver.get("https://ornament.health")
     driver.maximize_window()
     yield driver
-    driver.close()
+    driver.quit()
 
 @pytest.mark.usefixtures("setup")
 class TestMessenger:

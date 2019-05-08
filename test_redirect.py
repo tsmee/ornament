@@ -11,7 +11,7 @@ def setup(request):
     driver.get("http://ornament.health")
     driver.maximize_window()
     yield driver
-    driver.close()
+    driver.quit()
 
 @pytest.mark.usefixtures("setup")
 class TestRedirect:
